@@ -1,21 +1,25 @@
 package StudentManagementSystem;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class College {
     private int id;
     private String name;
     private String website;
     private String address;
-    private Department department;
+    private ArrayList<Department> departments;
 
-    public College(){
-       department = new Department();
+    public College() {
+        departments = new ArrayList();
     }
-    public College(int id,String name){
+
+    public College(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public College(College c){
+    public College(College c) {
         this.name = c.name;
     }
 
@@ -51,11 +55,31 @@ public class College {
         this.address = address;
     }
 
-    public Department getDepartment() {
-        return department;
+    public ArrayList<Department> getDepartments() {
+        return this.departments;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public Department getDepartmentById(int id) {
+        for (Department d : this.departments) {
+            if (d.getId() == id) {
+                return d;
+            }
+        }
+        return null;
     }
+
+    public void setDepartment(Department d) {
+        this.departments.add(d);
+    }
+
+    public void addDepartment(){
+        Department department = new Department();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter department id :");
+        department.setId(scanner.nextInt());
+        System.out.println("enter department name :");
+        department.setName(scanner.next());
+        setDepartment(department);
+    }
+
 }
