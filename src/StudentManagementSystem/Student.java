@@ -1,11 +1,18 @@
 package StudentManagementSystem;
 
-public class Student extends User{
+public class Student {
 
-  public Student(String name,String email,String password){
-      this.name = name;
-      this.email = email;
-      this.password = password;
-      this.type = "student";
-  }
+    private int id;
+    private String name;
+    private String email;
+    private String password;
+    private String address;
+    static  College college;
+    private String departmentName;
+    private String subjectName;
+    private String subjectMarks;
+
+    public Student(){
+
+    }
 }
