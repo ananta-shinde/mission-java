@@ -1,10 +1,10 @@
 package StudentManagementSystem;
 
-public class College {
+public class Department {
 
     private int id;
     private String name;
-    private String address;
+    private int collegeId;
 
     public int getId() {
         return id;
@@ -22,15 +22,16 @@ public class College {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public int getCollegeId() {
+        return collegeId;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCollegeId(int collegeId) {
+        this.collegeId = collegeId;
     }
 
-    public void showDetails(){
+    public void  showDetails(){
         System.out.println("id:" +this.id+" name: "+this.name);
     }
+
 }

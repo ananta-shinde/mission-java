@@ -1,6 +1,6 @@
 package StudentManagementSystem;
 
-public class Student {
+public class Teacher {
 
     private int id;
     private String name;
@@ -9,11 +9,6 @@ public class Student {
     private String address;
     private int collegeId;
     private int departmentId;
-
-
-    public Student(){
-
-    }
 
     public int getId() {
         return id;
